@@ -1,0 +1,23 @@
+body {
+  background: lightgray;
+}
+
+div {
+  padding: 1em;
+  padding-bottom: 2em;
+}
+
+li {
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  background: white;
+  padding-top: 1em;
+  list-style-type: none;
+  list-style-position:inside;
+  border: 1px solid black;
+  vertical-align: middle;
+}
+
+li:nth-child(odd) { 
+  background: lightcyan; 
+}
