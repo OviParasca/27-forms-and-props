@@ -11,6 +11,10 @@ export default class SubredditSearch extends React.Component{
     };
   }
 
+  willMount() {
+    console.log(`testing`);
+  }
+
   handleChange(e) {
     this.setState({
       [e.target.name]: e.target.value,
@@ -25,7 +29,8 @@ export default class SubredditSearch extends React.Component{
   render() {
     return (
       <React.Fragment>
-        <form onSubmit={this.props.handleSearch}>
+        <fieldset>
+          <legend>Reddit Board Search</legend>
           <input 
             name="subreddit" 
             placeholder="Subreddit Name..."
@@ -33,16 +38,17 @@ export default class SubredditSearch extends React.Component{
             onChange={e => this.handleChange(e)}
           />
           <input 
-            name="numResults" 
             type="number" 
+            name="numResults" 
             min="1" 
             max="99" 
-            value={this.state.numResults} 
+            placeholder="Enter a value from 1 to 99"
+            value={this.state.numResults > 0 ? this.state.numResults : ''} 
             onChange={e => this.handleChange(e)}
           />
           <button onClick={e => this.handleSubmit(e)}>Search</button>
-        </form>
-  
+        </fieldset>
+
       </React.Fragment>
     );
   }
